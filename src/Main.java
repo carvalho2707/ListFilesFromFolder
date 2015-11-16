@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Main {
 	public static List<String> lista = new ArrayList<String>();
-	public static final String SOURCE_FOLDER = "C:\\Users\\your.user\\Downloads\\folder\\";
-	public static final String DEST_FOLDER = "C:\\Users\\your.user\\Downloads\\folder\\nomes.txt";
+	public static final String SOURCE_FOLDER = "path";
+	public static final String DEST_FOLDER = "path\\nomes.txt";
 
 	public static void main(String[] args) throws IOException {
 
@@ -40,8 +40,8 @@ public class Main {
 				lePastas(insider);
 			}
 		} else {
-			lista.add(ficheiro.getName());
-			System.out.println(ficheiro.getName());
+			lista.add(ficheiro.getPath());
+			System.out.println(ficheiro.getPath());
 		}
 	}
 
