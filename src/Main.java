@@ -1,17 +1,19 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 	public static List<String> lista = new ArrayList<String>();
-	public static final String SOURCE_FOLDER = "path";
-	public static final String DEST_FOLDER = "path\\nomes.txt";
+	public static final String SOURCE_FOLDER = "\\Defravapfl21\\21EM0068\\0\\02 PI\\01_ Projectos\\ACTUAIS\\EDP\\2015\\Documentos Suporte\\EDPonCloud\\";
+	public static final String DEST_FOLDER = "\\Defravapfl21\\21EM0068\\0\\02 PI\\01_ Projectos\\ACTUAIS\\EDP\\2015\\Documentos Suporte\\EDPonCloud\\nomes.txt";
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, URISyntaxException {
 
-		File folder = new File(SOURCE_FOLDER);
+		File folder = new File(new URI("file:" + SOURCE_FOLDER));
 		if (folder.exists()) {
 			File[] listOfFiles = folder.listFiles();
 			for (File ficheiro : listOfFiles) {
@@ -20,7 +22,7 @@ public class Main {
 
 		}
 		if (lista.size() > 0) {
-			File txt = new File(DEST_FOLDER);
+			File txt = new File(new URI("file:" + DEST_FOLDER));
 			if (!txt.exists()) {
 				txt.createNewFile();
 			}
